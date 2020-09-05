@@ -299,6 +299,10 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  top: -230px;
+}
+#w_height{
+  height: 250px;
 }
 ul.content_list {
   width: 100%;
