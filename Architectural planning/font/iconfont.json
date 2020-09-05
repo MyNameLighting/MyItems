@@ -1,0 +1,58 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "308779",
+      "name": "qq",
+      "font_class": "qq",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "2459166",
+      "name": "叉号",
+      "font_class": "chahao",
+      "unicode": "e502",
+      "unicode_decimal": 58626
+    },
+    {
+      "icon_id": "3584351",
+      "name": "加号",
+      "font_class": "iconjia",
+      "unicode": "e505",
+      "unicode_decimal": 58629
+    },
+    {
+      "icon_id": "7963310",
+      "name": "下箭头",
+      "font_class": "icon",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "9557782",
+      "name": "右箭头",
+      "font_class": "icon1",
+      "unicode": "e504",
+      "unicode_decimal": 58628
+    },
+    {
+      "icon_id": "12268864",
+      "name": "链接",
+      "font_class": "lianjie",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "14729267",
+      "name": "电  话",
+      "font_class": "dianhua1",
+      "unicode": "e503",
+      "unicode_decimal": 58627
+    }
+  ]
+}

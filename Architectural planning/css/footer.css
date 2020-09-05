@@ -1,0 +1,19 @@
+#footer {
+  height: 20px;
+  padding: 10px 56px;
+}
+#footer p {
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+}
+#footer p span.ellipsis {
+  display: inline-block;
+  max-width: 70%;
+}
+#footer p a {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+  color: #7f7f7f;
+}
