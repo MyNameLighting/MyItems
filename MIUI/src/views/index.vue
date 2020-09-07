@@ -1,73 +1,74 @@
 <template>
-<div class="index">
-  <div class="container">
-    <div class="swiper-box">
-      <div class="nav-menu">
-        <ul class="menu-wrap">
-          <li class="menu-item">
-            <a href="javascript:;">手机 电话卡</a>
-            <div class="children">
-              <ul v-for="(item,i) in menuList" :key="i">
-                <li v-for="(sub,j) in item" :key="j">
-                  <a :href="sub?'/#/product/'+sub.id:''">
-                    <img :src="sub?sub.img:'/imgs/item-box-1.png'" alt />
-                    {{sub?sub.name:'小米9'}}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="menu-item">
-            <a href="javascript:;">电视 盒子</a>
-            <div class="children"></div>
-          </li>
-          <li class="menu-item">
-            <a href="javascript:;">笔记本 平板</a>
-            <div class="children"></div>
-          </li>
-          <li class="menu-item">
-            <a href="javascript:;">家电 插线板</a>
-            <div class="children"></div>
-          </li>
-          <li class="menu-item">
-            <a href="javascript:;">出行 穿戴</a>
-            <div class="children"></div>
-          </li>
-          <li class="menu-item">
-            <a href="javascript:;">智能 路由器</a>
-            <div class="children"></div>
-          </li>
-          <li class="menu-item">
-            <a href="javascript:;">电源 配件</a>
-            <div class="children"></div>
-          </li>
-          <li class="menu-item">
-            <a href="javascript:;">生活 箱包</a>
-            <div class="children"></div>
-          </li>
-        </ul>
+  <div class="index">
+    <div class="container">
+      <div class="swiper-box">
+        <div class="nav-menu">
+          <ul class="menu-wrap">
+            <li class="menu-item">
+              <a href="javascript:;">手机 电话卡</a>
+              <div class="children">
+                <ul v-for="(item,i) in menuList" :key="i">
+                  <li v-for="(sub,j) in item" :key="j">
+                    <a :href="sub?'/#/product/'+sub.id:''">
+                      <img :src="sub?sub.img:'/imgs/item-box-1.png'" alt />
+                      {{sub?sub.name:'小米9'}}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:;">电视 盒子</a>
+              <div class="children"></div>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:;">笔记本 平板</a>
+              <div class="children"></div>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:;">家电 插线板</a>
+              <div class="children"></div>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:;">出行 穿戴</a>
+              <div class="children"></div>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:;">智能 路由器</a>
+              <div class="children"></div>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:;">电源 配件</a>
+              <div class="children"></div>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:;">生活 箱包</a>
+              <div class="children"></div>
+            </li>
+          </ul>
+        </div>
+        <swiper :options="swiperOption">
+          <swiper-slide v-for="(item,index) in slideList" :key="index">
+            <a :href="'/#/product/'+item.id">
+              <img :src="item.img" />
+            </a>
+          </swiper-slide>
+          <!-- Optional controls -->
+          <div class="swiper-pagination" slot="pagination"></div>
+          <div class="swiper-button-prev" slot="button-prev"></div>
+          <div class="swiper-button-next" slot="button-next"></div>
+        </swiper>
       </div>
-      <swiper :options="swiperOption">
-        <swiper-slide v-for="(item,index) in slideList" :key="index">
-          <a :href="'/#/product/'+item.id">
-            <img :src="item.img" />
-          </a>
-        </swiper-slide>
-        <!-- Optional controls -->
-        <div class="swiper-pagination" slot="pagination"></div>
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
-      </swiper>
-    </div>
-    <div class="ads-box">
-      <a :href="'/#/product/'+item.id" v-for="(item,index) in adsList" :key="index">
-        <img :src="item.img" alt />
-      </a>
-    </div>
-    <div class="banner">
-      <a href="/#/product/30">
-        <img src="/imgs/banner-1.png" alt />
-      </a>
+      <div class="ads-box">
+        <a :href="'/#/product/'+item.id" v-for="(item,index) in adsList" :key="index">
+          <img v-lazy="item.img" alt />
+        </a>
+      </div>
+      <div class="banner">
+        <a href="/#/product/30">
+          <img v-lazy="'/imgs/banner-1.png'" alt />
+        </a>
+      </div>
     </div>
     <div class="product-box">
       <div class="container">
@@ -75,7 +76,7 @@
         <div class="wrapper">
           <div class="banner-left">
             <a href="/#/product/35">
-              <img src="/imgs/mix-alpha.jpg" alt />
+              <img v-lazy="'/imgs/mix-alpha.jpg'" alt />
             </a>
           </div>
           <div class="list-box">
@@ -83,7 +84,7 @@
               <div class="item" v-for="(item,j) in arr" :key="j">
                 <span :class="{'new-pro':j%2==0}">新品</span>
                 <div class="item-img">
-                  <img :src="item.mainImage" />
+                  <img v-lazy="item.mainImage" alt />
                 </div>
                 <div class="item-info">
                   <h3>{{item.name}}</h3>
@@ -96,24 +97,20 @@
         </div>
       </div>
     </div>
+    <service-bar></service-bar>
+    <modal title="提示" sureText="查看购物车" btnType="1" modalType="middle" :showModal="showModal" @submit="goToCart" @cancel="showModal=false">
+      <template v-slot:body>
+        <p>商品添加成功！</p>
+      </template>
+    </modal>
   </div>
-  <service-bar></service-bar>
-  <modal title="提示" sureText="查看购物车" btnType="1" modalType="middle" :showModal="showModal" @submit="goToCart" @cancel="showModal=false">
-    <template v-slot:body>
-      <p>商品添加成功！</p>
-    </template>
-  </modal>
-</div>
 </template>
 
 <script>
 import ServiceBar from "./../components/ServiceBar";
 import Modal from "./../components/Modal";
 import "swiper/dist/css/swiper.css";
-import {
-  swiper,
-  swiperSlide
-} from "vue-awesome-swiper";
+import { swiper, swiperSlide } from "vue-awesome-swiper";
 
 export default {
   name: "index",
@@ -121,7 +118,7 @@ export default {
     swiper,
     swiperSlide,
     ServiceBar,
-    Modal
+    Modal,
   },
   data() {
     return {
@@ -142,7 +139,8 @@ export default {
           prevEl: ".swiper-button-prev",
         },
       },
-      slideList: [{
+      slideList: [
+        {
           id: "42",
           img: "/imgs/slider/slide-1.jpg",
         },
@@ -164,7 +162,8 @@ export default {
         },
       ],
       menuList: [
-        [{
+        [
+          {
             id: 30,
             img: "/imgs/item-box-1.png",
             name: "小米CC9",
@@ -191,7 +190,8 @@ export default {
         [0, 0, 0, 0],
         [0, 0, 0, 0],
       ],
-      adsList: [{
+      adsList: [
+        {
           id: 33,
           img: "/imgs/ads/ads-1.png",
         },
@@ -209,7 +209,7 @@ export default {
         },
       ],
       phoneList: [],
-      showModal: false
+      showModal: false,
     };
   },
   mounted() {
@@ -217,31 +217,33 @@ export default {
   },
   methods: {
     init() {
-      this.axios.get('/products', {
-        params: {
-          categoryId: 100012,
-          pageSize: 14
-        }
-      }).then((res) => {
-        res.list = res.list.slice(6, 14);
-        this.phoneList = [res.list.slice(0, 4), res.list.slice(4, 8)]
-      })
+      this.axios
+        .get("/products", {
+          params: {
+            categoryId: 100012,
+            pageSize: 14,
+          },
+        })
+        .then((res) => {
+          res.list = res.list.slice(6, 14);
+          this.phoneList = [res.list.slice(0, 4), res.list.slice(4, 8)];
+        });
     },
-    addCart() {
-      this.showModal = true;
-      // this.axios.post('/carts',{
-      //   productId: id,
-      //   selected: true
-      // }).then(()=>{
-
-      // }).catch(()=>{
-      //   this.showModal = true;
-      // })
+    addCart(id) {
+      this.axios
+        .post("/carts", {
+          productId: id,
+          selected: true,
+        })
+        .then((res) => {
+          this.showModal = true;
+          this.$store.dispatch("saveCartCount", res.cartTotalQuantity);
+        });
     },
     goToCart() {
-      this.$router.push('/cart');
+      this.$router.push("/cart");
     },
-  }
+  },
 };
 </script>
 
@@ -443,7 +445,7 @@ export default {
 
                 &:after {
                   content: "";
-                  @include bgImg(22px, 22px, '/imgs/icon-cart-hover.png');
+                  @include bgImg(22px, 22px, "/imgs/icon-cart-hover.png");
                   margin-left: 5px;
                   vertical-align: middle;
                 }
