@@ -1,0 +1,54 @@
+/* 登录页面 */
+.login-content {
+  position: relative;
+  top: 44px;
+  bottom: 50px;
+}
+.register-now {
+  color: #006699;
+  font-size: 14px;
+  float: right;
+  margin: 10px 15px 0 0;
+}
+#login-btn,#register-btn,#editPwd-btn {
+  background-color: #006699;
+  width: 80%;
+  border: 0;
+  border-radius: 5px;
+}
+.mui-input-password,.mui-input,.mui-input-clear {
+  font-size: 15px !important;
+}
+/* 注册页面 */
+.getCode {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  font-size: 14px;
+  color: #fff;
+  transform: translateY(-50%);
+  background-color: #007aff;
+  padding: 8px;
+  border-radius: 4px;
+}
+.register-now {
+  display: block;
+  text-align: right;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #006699;
+  padding-right: 10px;
+}
+#register-btn {
+  width: 80%;
+  background-color: #006699;
+}
+/* 修改密码 */
+#vCode {
+  text-align: center;
+  color: #006699;
+  width: 40%;
+  background-color: #fff;
+  border: 1px solid #006699;
+  border-radius: 5px;
+}

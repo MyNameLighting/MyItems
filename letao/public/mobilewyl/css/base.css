@@ -1,0 +1,30 @@
+/* 头部样式 */
+.my-header {
+  background-color: #006699;
+
+}
+.my-header h1 {
+  color: #fff;
+}
+.my-header .mui-icon-search,.mui-icon-undo{
+  color: #fff;
+}
+/* 中间区域 */
+.mui-content {
+  margin-bottom: 50px;
+  background-color: #fff;
+}
+/* 底部样式 */
+.my-footer {
+  background-color: #006699;
+}
+.my-footer .mui-tab-item {
+  color: #fff;
+}
+.my-footer .mui-tab-item.mui-active {
+  color: darkorange;
+}
+.my-footer .mui-tab-item span+span {
+  margin-top: 5px;
+}
+

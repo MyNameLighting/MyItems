@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum=1.0,user-scalable=no">
+  <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+  <link rel="stylesheet" href="assets/fontawesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <title>收货地址管理中心</title>
+  <style>
+    .mui-table-view {
+      margin-top: 0  !important;
+    }
+    .mui-bar-nav~.mui-content {
+      padding-top: 0;
+    }
+    .mui-content {
+      width: 100%;
+      height: 580px;
+      background-color: #fff; 
+      position: relative;
+      top: 44px;
+      bottom: 50px;
+      overflow: hidden;
+    }
+    .mui-table-view-cell {
+      padding-right: 55px !important;
+    }
+    .mui-table-view-cell .mui-media-body p+p {
+      margin-top: 5px;
+    }
+    .addAddress {
+      display: block;
+      width: 100%;
+      padding: 12px 0;
+      margin: 6px 0;
+      font-weight: 600;
+      border: 1px solid #999;
+      border-radius: 5px;
+      color: #000;
+      background-color: rgb(236, 235, 235);
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .mui-media-body {
+      font-size: 14px;
+    }
+    .mui-media-body span+span {
+      margin-left: 5px;
+    }
+    .mui-media-body p {
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 头部区域 -->
+  <header id="header" class="mui-bar mui-bar-nav my-header">
+    <a class="mui-icon mui-icon-undo" href="javascript:history.back();"></a>
+    <h1 class="mui-title">收货地址管理中心</h1>
+  </header>
+  <!-- 内容区域 -->
+  <div class="mui-content">
+    <a href="addAddress.html?isEdit=0" class="addAddress">添加收货地址</a>
+    <ul class="mui-table-view mui-table-view-chevron" id="address-box">
+      
+    </ul>
+  </div>
+  <!-- 底部区域 -->
+  <footer class="mui-bar mui-bar-tab my-footer">
+    <a class="mui-tab-item" href="index.html">
+      <span class="mui-icon mui-icon-home"></span>
+      <span class="mui-tab-label">首页</span>
+    </a>
+    <a class="mui-tab-item" href="category.html">
+      <span class="mui-icon mui-icon-list"></span>
+      <span class="mui-tab-label">分类</span>
+    </a>
+    <a class="mui-tab-item" href="cart.html">
+      <span class="mui-icon fa fa-shopping-cart"></span>
+      <span class="mui-tab-label">购物车</span>
+    </a>
+    <a class="mui-tab-item" href="user.html">
+      <span class="mui-icon mui-icon-contact"></span>
+      <span class="mui-tab-label">会员中心</span>
+    </a>
+  </footer>
+  <script src="assets/zepto/zepto.min.js"></script>
+  <script src="assets/mui/js/mui.min.js"></script>
+  <script src="assets/artTemplate/template-native.js"></script>
+  <script src="js/base.js"></script>
+  <script src="js/address.js"></script>
+ 
+  <script type="text/template" id="addressTpl">
+    <%for(var i=0; i<result.length;i++){%>
+      <li class="mui-table-view-cell mui-media">
+        <div class="mui-slider-right mui-disabled">
+          <span class="mui-btn mui-btn-blue edit-btn" data-id="<%=result[i].id%>">编辑</span>
+          <span class="mui-btn mui-btn-red delete-btn" data-id="<%=result[i].id%>">删除</span>
+        </div>
+        <div class="mui-media-body mui-navigate-right mui-slider-handle">
+          <span>收货人：<%=result[i].recipients%></span>
+          <span>邮编：<%=result[i].postCode%></span>
+          <p class="mui-ellipsis"><%=result[i].address%><%=result[i].addressDetail%></p>
+        </div>
+      </li>
+    <%}%>
+  </script>
+</body>
+
+</html>
