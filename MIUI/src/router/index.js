@@ -61,7 +61,7 @@ export default new Router({
         },
         {
           path: "alipay",
-          name: "ali-pay",
+          name: "alipay",
           component: () => import("../views/alipay.vue"),
         },
       ],

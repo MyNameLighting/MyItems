@@ -174,7 +174,7 @@ export default {
           expires: '-1'
         });
         this.$store.dispatch('saveUserName', '');
-        this.$store.dispatch('saveCartCount', '0');
+        this.$store.dispatch('saveCartCount', '0')
       })
     },
     goToCart() {

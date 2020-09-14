@@ -63,7 +63,7 @@ export default {
           params: {
             from: 'login'
           }
-        });
+        })
       })
     },
     ...mapActions(['saveUserName']),
