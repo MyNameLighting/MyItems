@@ -185,12 +185,13 @@ export default{
       this.userAction = 0;
       this.showEditModal = true;
     },
-    //打开新增地址弹框
+    //编辑新增地址弹框
     editAddressModal(item) {
       this.checkedItem = item;
       this.userAction = 1;
       this.showEditModal = true;
     },
+    //删除地址
     delAddress(item) {
       this.checkedItem = item;
       this.userAction = 2;

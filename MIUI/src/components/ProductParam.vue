@@ -24,6 +24,7 @@
         isFixed:false
       }
     },
+    //挂载
     mounted(){
       window.addEventListener('scroll',this.initHeight)
     },
@@ -33,6 +34,7 @@
         this.isFixed = scrollTop > 152? true:false;
       }
     },
+    //销毁
     destroyed(){
       window.removeEventListener('scroll',this.initHeight,false)
     }

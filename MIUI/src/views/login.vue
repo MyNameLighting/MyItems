@@ -49,6 +49,7 @@ export default {
     }
   },
   methods: {
+    //登录
     login() {
       let {username,password} = this;
       this.axios.post('/user/login', {
@@ -67,6 +68,7 @@ export default {
       })
     },
     ...mapActions(['saveUserName']),
+    //注册
     register() {
       this.axios.post('/user/register', {
         username: 'kiven',
